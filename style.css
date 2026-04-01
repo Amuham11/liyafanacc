@@ -1,0 +1,158 @@
+/* --- THE FUNKY PINK PALETTE & VARIABLES --- */
+:root {
+    /* Core funky pink tones */
+    --pink-light: #FFF0F5;   /* Soft Blush */
+    --pink-medium: #FF85CF;  /* Bubblegum */
+    --pink-dark: #D90368;    /* Electric Cherry */
+    --plum-dark: #2E0219;    /* Text/Outline - Deep Plum */
+    --neon-yellow: #F4FF52;  /* Highlight - Neon Lemon */
+
+    /* Mapping Variables */
+    --card-bg: var(--pink-light);
+    --text-main: var(--plum-dark);
+    --accent-color: var(--pink-dark);
+    --featured-text: var(--neon-yellow);
+    
+    /* Funky "Hard Shadow" (Retro/Magazine Style) */
+    --shadow: 0 8px 0px var(--plum-dark);
+}
+
+/* --- RESET & GLOBAL STYLES --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+    min-height: 100vh;
+    
+    /* 1. ANIMATED PINK GRADIENT BACKGROUND */
+    background: linear-gradient(
+        120deg,
+        var(--pink-light),
+        var(--pink-medium),
+        var(--pink-dark),
+        var(--pink-medium),
+        var(--pink-light)
+    );
+    background-size: 400% 400%;
+    animation: gradientMovement 12s ease infinite;
+}
+
+@keyframes gradientMovement {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* --- LAYOUT CONTAINER --- */
+.container {
+    width: 100%;
+    max-width: 450px; /* Mobile-focused width */
+    text-align: center;
+    z-index: 1;
+}
+
+/* --- PROFILE SECTION --- */
+.profile-img {
+    width: 300px;
+    height: 300px;
+    margin: 0 auto 16px;
+    border-radius: 50%;
+    border: 4px solid var(--plum-dark);
+    
+    /* ADD THESE LINES */
+    background-image: url('profile_pic.jpg'); /* Replace with your filename */
+    background-size: cover;               /* Ensures the photo fills the circle */
+    background-position: center;          /* Centers your face in the frame */
+    background-color: var(--pink-light);  /* Fallback color */
+}
+
+/* --- NEW CONTACT BUTTON --- */
+/* Container to ensure the button sits on its own line and centers */
+.button-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 10px 0 30px 0; /* Adjust these numbers to change the spacing above/below */
+}
+
+.contact-btn {
+    display: inline-block;
+    background-color: var(--plum-dark);
+    color: var(--neon-yellow);
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding: 14px 32px;
+    border-radius: 50px;
+    border: 2px solid var(--plum-dark);
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.contact-btn:hover {
+    background-color: var(--pink-light);
+    color: var(--plum-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(46, 2, 25, 0.2);
+}
+/* --- LINK CARDS SECTION --- */
+.links-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.section-title {
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin: 20px 0 8px;
+    color: var(--plum-dark);
+    opacity: 0.8;
+}
+
+.link-card {
+    display: block;
+    background: var(--card-bg);
+    color: var(--text-main);
+    text-decoration: none;
+    padding: 18px;
+    border-radius: 12px;
+    border: 3px solid var(--plum-dark);
+    box-shadow: var(--shadow);
+    transition: all 0.1s ease;
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.link-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 0px var(--plum-dark);
+}
+
+/* Hard-click effect */
+.link-card:active {
+    transform: translate(4px, 4px);
+    box-shadow: 0 0 0 transparent;
+}
+
+/* --- FOOTER --- */
+footer {
+    margin-top: 50px;
+    padding-bottom: 20px;
+    font-size: 0.7rem;
+    color: var(--plum-dark);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
