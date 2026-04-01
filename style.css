@@ -67,7 +67,7 @@ body {
     border: 4px solid var(--plum-dark);
     
     /* ADD THESE LINES */
-    background-image: url('profile_pic.jpg'); /* Replace with your filename */
+    background-image: url('./profile_pic.jpg'); /* Replace with your filename */
     background-size: cover;               /* Ensures the photo fills the circle */
     background-position: center;          /* Centers your face in the frame */
     background-color: var(--pink-light);  /* Fallback color */
