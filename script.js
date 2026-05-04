@@ -2,7 +2,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     const contactBtn = document.querySelector('.contact-btn');
-    const emailAddress = "liyafanacc@gmail.com";
+    const emailAddress = "contact@liyafanacc.com";
 
     if (contactBtn) {
         contactBtn.addEventListener('click', function(e) {
